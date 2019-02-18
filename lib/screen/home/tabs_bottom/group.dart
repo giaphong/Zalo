@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class Group extends StatefulWidget {
   Group({Key key}) : super(key: key);
@@ -13,6 +14,46 @@ class Group extends StatefulWidget {
 class GroupState extends State<Group> {
 
   PopupMenuGroup _selectedChoices = choices[0];
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var initializationSettingsAndroid =
+    new AndroidInitializationSettings('app_icon');
+    var initializationSettingsIOS = new IOSInitializationSettings();
+    var initializationSettings = new InitializationSettings(
+        initializationSettingsAndroid, initializationSettingsIOS);
+    flutterLocalNotificationsPlugin.initialize(initializationSettings,
+        onSelectNotification: onSelectNotification);
+  }
+
+  Future onSelectNotification(String payload) async {
+    if (payload != null) {
+      debugPrint('No: ' + payload);
+    }
+//    await Navigator.push(
+//      context,
+//      new MaterialPageRoute(builder: (context) => new SecondScreen(payload)),
+//    );
+  }
+
+  int id = 0 ;
+  Future  displayANotification() async{
+    var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
+        'your channel id', 'your channel name', 'your channel description',
+        importance: Importance.Max, priority: Priority.High);
+    var iOSPlatformChannelSpecifics = new IOSNotificationDetails();
+    var platformChannelSpecifics = new NotificationDetails(
+        androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.show(
+        id, 'Zalo Khuyến Mại', '1000 sản phẩm giá không đồng .', platformChannelSpecifics,
+        payload: 'Tham gia đi nào');
+    setState(() {
+      id ++ ;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +109,13 @@ class GroupState extends State<Group> {
         ),
         body: Container(
           child: Center(
-            child: Icon(_selectedChoices.icon),
+            child: MaterialButton(
+              child: Text('Show Notification'),
+              onPressed: (){
+                displayANotification();
+              },
+            ),
+
           ),
       ),
     );
