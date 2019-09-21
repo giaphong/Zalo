@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:search_view/screen/home.dart';
+import 'package:search_view/screen/home_splash_screen.dart';
 
 class MyHome extends StatelessWidget {
   @override
@@ -8,7 +8,7 @@ class MyHome extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Zalo',
-      home: MyHomeZaLo(),
+      home: HomeSplashScreen(),
     );
   }
 }

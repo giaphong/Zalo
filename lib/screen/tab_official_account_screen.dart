@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class TabOfficialAccount extends StatefulWidget{
+class TabOfficialAccountScreen extends StatefulWidget {
   @override
-  TabOfficialAccountState createState() {
+  TabOfficialAccountScreenState createState() {
     // TODO: implement createState
-    return new TabOfficialAccountState();
+    return new TabOfficialAccountScreenState();
   }
 }
 
-class TabOfficialAccountState extends State<TabOfficialAccount>{
+class TabOfficialAccountScreenState extends State<TabOfficialAccountScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

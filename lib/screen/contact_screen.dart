@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:search_view/screen/home/tabs_bottom/tab_contact/official_account.dart';
-import 'package:search_view/screen/home/tabs_bottom/tab_contact/tab_contact.dart';
+import 'package:search_view/screen/tab_contact_screen.dart';
+import 'package:search_view/screen/tab_official_account_screen.dart';
 
-class Contact extends StatefulWidget {
-  Contact({Key key}) : super(key: key);
+
+class ContactScreen extends StatefulWidget {
+  ContactScreen({Key key}) : super(key: key);
 
   @override
-  ContactState createState() {
+  ContactScreenState createState() {
     // TODO: implement createState
-    return new ContactState();
+    return new ContactScreenState();
   }
 }
 
-class ContactState extends State<Contact> {
+class ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -52,8 +53,8 @@ class ContactState extends State<Contact> {
           ),
           body: TabBarView(
             children: <Widget>[
-              new TabContact(),
-              new TabOfficialAccount()
+              new TabContactScreen(),
+              new TabOfficialAccountScreen()
             ],
           ),
         ),

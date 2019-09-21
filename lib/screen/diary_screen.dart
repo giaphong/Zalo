@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Diary extends StatefulWidget {
-  Diary({Key key}) : super(key: key);
+class DiaryScreen extends StatefulWidget {
+  DiaryScreen({Key key}) : super(key: key);
 
   @override
-  DiaryState createState() {
+  DiaryScreenState createState() {
     // TODO: implement createState
-    return new DiaryState();
+    return new DiaryScreenState();
   }
 }
 
-class DiaryState extends State<Diary> {
+class DiaryScreenState extends State<DiaryScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

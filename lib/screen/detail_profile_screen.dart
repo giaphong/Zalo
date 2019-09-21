@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class DetailMessage extends StatefulWidget{
-  
-  final String title ;
-  DetailMessage({this.title});
-  
+class DetailProfileScreen extends StatefulWidget {
+  final String title;
+
+  DetailProfileScreen({this.title});
+
   @override
-  DetailMessgaeState createState() {
+  DetailProfileScreenState createState() {
     // TODO: implement createState
-    return new DetailMessgaeState();
+    return new DetailProfileScreenState();
   }
 }
 
-class DetailMessgaeState extends State<DetailMessage>{
+class DetailProfileScreenState extends State<DetailProfileScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

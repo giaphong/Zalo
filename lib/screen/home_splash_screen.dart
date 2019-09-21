@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:search_view/screen/login/login.dart';
-import 'package:search_view/screen/login/register.dart';
+import 'package:search_view/screen/register_screen.dart';
 
-class MyHomeZaLo extends StatefulWidget {
+import 'login_screen.dart';
+
+class HomeSplashScreen extends StatefulWidget {
   @override
-  MyHomeZaLoState createState() {
-    return new MyHomeZaLoState();
+  HomeSplashScreenState createState() {
+    return new HomeSplashScreenState();
   }
 }
 
-class MyHomeZaLoState extends State<MyHomeZaLo> {
+class HomeSplashScreenState extends State<HomeSplashScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -23,13 +24,14 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/4),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 4),
               child: Center(
                 child: Text(
-                  'Zalo',
+                  'Mạng SV',
                   style: TextStyle(
                       color: Colors.blue,
-                      fontSize: 50.0,
+                      fontSize: 48.0,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -37,7 +39,10 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
             Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 2,
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, top: MediaQuery.of(context).size.height/4),
+                padding: EdgeInsets.only(
+                    left: 20.0,
+                    right: 20.0,
+                    top: MediaQuery.of(context).size.height / 4),
                 child: Center(
                   child: Column(
                     children: <Widget>[
@@ -47,7 +52,7 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
                         child: FlatButton(
                           color: Colors.blue,
                           child: Text(
-                            'Login'.toUpperCase(),
+                            'Đăng nhập'.toUpperCase(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -55,7 +60,10 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => LoginZalo(title: 'Login',)),
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen(
+                                        title: 'Đăng nhập',
+                                      )),
                             );
                           },
                           shape: RoundedRectangleBorder(
@@ -69,7 +77,7 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
                         child: FlatButton(
                           color: Colors.white,
                           child: Text(
-                            'Register'.toUpperCase(),
+                            'Đăng ký'.toUpperCase(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -77,7 +85,10 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => RegisterZalo(title: 'Register',)),
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterScreen(
+                                        title: 'Register',
+                                      )),
                             );
                           },
                           shape: RoundedRectangleBorder(
@@ -85,7 +96,8 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/4 - 145),
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height / 4 - 145),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -93,28 +105,19 @@ class MyHomeZaLoState extends State<MyHomeZaLo> {
                           children: <Widget>[
                             FlatButton(
                               child: Text('VN'),
-                              onPressed: (){
-
-                              },
+                              onPressed: () {},
                             ),
                             FlatButton(
                               child: Text('EN'),
-                              onPressed: (){
-
-                              },
+                              onPressed: () {},
                             ),
                             FlatButton(
                               child: Text('L'),
-                              onPressed: (){
-
-                              },
+                              onPressed: () {},
                             )
                           ],
                         ),
                       ),
-
-
-                      
                     ],
                   ),
                 ))

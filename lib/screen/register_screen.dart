@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class RegisterZalo extends StatefulWidget{
-  final String title ;
+class RegisterScreen extends StatefulWidget {
+  final String title;
 
-  RegisterZalo({this.title});
+  RegisterScreen({this.title});
+
   @override
-  RegisterZaloState createState() {
+  RegisterScreenState createState() {
     // TODO: implement createState
-    return new RegisterZaloState();
+    return new RegisterScreenState();
   }
 }
 
-class RegisterZaloState extends State<RegisterZalo>{
+class RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

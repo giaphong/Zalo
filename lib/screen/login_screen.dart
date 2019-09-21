@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:search_view/screen/home/home_zalo.dart';
 
-class LoginZalo extends StatefulWidget {
+import 'home_screen.dart';
+
+class LoginScreen extends StatefulWidget {
   final String title;
 
-  LoginZalo({this.title});
+  LoginScreen({this.title});
 
   @override
-  LoginZaloState createState() {
+  LoginScreenState createState() {
     // TODO: implement createState
-    return new LoginZaloState();
+    return new LoginScreenState();
   }
 }
 
-class LoginZaloState extends State<LoginZalo> {
+class LoginScreenState extends State<LoginScreen> {
   final txtPhoneController = TextEditingController();
   final txtPasswordController = TextEditingController();
 
@@ -91,7 +92,7 @@ class LoginZaloState extends State<LoginZalo> {
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomeZalo(),
+                  builder: (context) => HomeScreen(),
                 ),
                 ModalRoute.withName('/')
               );
@@ -109,26 +110,6 @@ class LoginZaloState extends State<LoginZalo> {
         maintainState: true,
         visible: true,
       ),
-//      child: FlatButton(
-//        color: Colors.blue,
-//        child: Text('Đăng nhập'),
-//        onPressed: (){
-//          String phoneNumber = txtPhoneController.text;
-//          String password = txtPasswordController.text;
-//          if(phoneNumber.trim().isNotEmpty && password.trim().isNotEmpty){
-//            Navigator.push(
-//              context,
-//              MaterialPageRoute(
-//                builder: (context) => HomeZalo(),
-//              ),
-//            );
-//          }else {
-//            return null;
-//          }
-//
-//        },
-//        shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-//      ),
     );
   }
 
@@ -164,8 +145,9 @@ class LoginZaloState extends State<LoginZalo> {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title,),
+          title: Text('Đăng nhập',),
           titleSpacing: 0.0,
+          centerTitle: true,
         ),
         body: SingleChildScrollView(
           child: Column(

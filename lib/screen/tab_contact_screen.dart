@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class TabContact extends StatefulWidget{
+class TabContactScreen extends StatefulWidget {
   @override
-  TabContactState createState() {
+  TabContactScreenState createState() {
     // TODO: implement createState
-    return new TabContactState();
+    return new TabContactScreenState();
   }
 }
 
-class TabContactState extends State<TabContact>{
+class TabContactScreenState extends State<TabContactScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
